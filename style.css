@@ -1,116 +1,153 @@
-*{
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+* {
+  margin: 0;
+  padding: 0;
 }
+
 .container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 0.5rem;
-    text-align: center;
-  }
-  .header-text{
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    padding: 3rem 1rem .5rem; 
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  overflow: hidden;
 }
-  
-  #search-image{
-    width: 50%;
-    padding: 4px 2px;
-    border: 1px solid #5a59597e;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.header,
+#show-more {
+  text-align: center;
+  padding: 1rem 0;
+}
+.header-text {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+#search-image {
+  width: 50%;
+  padding: 4px 2px;
+  border: 1px solid #5a59597e;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 16px;
+}
+#search-image:focus {
+  outline: none;
+}
+#button {
+  margin-left: -5px;
+  padding: 4px;
+  background: #f33131;
+  border: 1px solid #a00b0b;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: antiquewhite;
+  font-size: 16px;
+}
+.search-image {
+  padding: 1rem;
+}
+.single-image {
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.single-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 5px;
+  transition: opacity 0.2s ease-in-out;
+}
+.single-image:hover img {
+  opacity: 0.8;
+}
+.single-image a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 5px;
+}
+#show-more button {
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease-in-out;
+  background: #f33131;
+  border: 1px solid #ce0b0b;
+  color: #d6d6d6;
+}
+#show-more button:hover {
+  opacity: 0.8;
+}
+
+/* responsive layout */
+/* for xs device */
+@media (min-width: 475px) {
+  .container {
+    max-width: 475px;
   }
-  #search-image:focus{
-    outline: none;
-  }
-  #button{
-    margin-left: -5px;
-    padding: 4px;
-    background: #f33131;
-    border: 1px solid #a00b0b;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    color: antiquewhite;
+}
+/* for sm device */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
   }
   .search-image {
-    padding: 1rem ;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto auto;
+    align-items: start;
   }
-  .single-image{
-    border: 1px solid #979494;
-    border-radius: 5px;
-    margin-bottom: 1rem;
+  .single-image {
+    margin-bottom: 0;
   }
-  .single-image img{
-    width: 100%;
-    height: 100%;
-    margin-bottom: 5px;
-    
+}
+/* for md device */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
   }
-  .single-image a{
-    text-decoration: none;
+  .header-text {
+    font-size: 2rem;
   }
- 
-
-  /* responsive layout */
-  /* for xs device */
-  @media (min-width: 475px) {
-    .container {
-      max-width: 475px;
-    }
+  #search-image {
+    padding: 8px;
   }
-  /* for sm device */
-  @media (min-width: 640px) {
-    .container {
-      max-width: 640px;
-    }
-    .search-image {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: auto auto;
-        align-items: center;
-      }
+  #button {
+    margin-left: -5px;
+    padding: 8px;
   }
-  /* for md device */
-  @media (min-width: 768px) {
-    .container {
-      max-width: 768px;
-    }
-    .header-text{
-        font-size: 2rem;
-    }
-    #search-image{
-        padding: 8px;
-      }
-      #button{
-        margin-left: -5px;
-        padding: 8px;
-      }
-      .search-image {
-        grid-template-columns: auto auto auto;
-      }
+  .search-image {
+    grid-template-columns: auto auto auto;
   }
-  /* for lg device */
-  @media (min-width: 1024px) {
-    .container {
-      max-width: 1024px;
-    }
-    .search-image {
-        grid-template-columns: auto auto auto auto;
-      }
+  .header {
+    padding: 2rem 0;
   }
-  /* for xl device */
-  @media (min-width: 1280px) {
-    .container {
-      max-width: 1280px;
-    }
-    
+}
+/* for lg device */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
   }
-  /* for 2xl device */
-  @media (min-width: 1536px) {
-    .container {
-      max-width: 1536px;
-    }
-    
+  .search-image {
+    grid-template-columns: auto auto auto auto;
   }
+  #search-image {
+    width: 30%;
+  }
+  #search-image {
+    padding: 12px;
+  }
+  #button {
+    padding: 12px;
+  }
+}
+/* for xl device */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+/* for 2xl device */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
