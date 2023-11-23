@@ -13,7 +13,7 @@ async function searchImage() {
   const response = await fetch(url);
   const data = await response.json();
   const results = data.results;
-  console.log(results);
+  
   if (page === 1) {
     searchResults.innerHTML = "";
   }
@@ -39,6 +39,8 @@ async function searchImage() {
     showMore.style.display = "block";
   }
 }
+// Add this line to hide the button initially
+showMore.style.display = "none";
 
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
